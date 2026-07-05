@@ -1,12 +1,17 @@
+// components/search-bar.tsx
 import { StyleSheet, TextInput, View } from "react-native";
- 
+
 interface SearchBarProps {
   value: string;
   onChangeText: (text: string) => void;
-  placeholder?: string;  // the ? means this prop is optional
+  placeholder?: string;
 }
- 
-export default function SearchBar({ value, onChangeText, placeholder }: SearchBarProps) {
+
+export default function SearchBar({
+  value,
+  onChangeText,
+  placeholder,
+}: SearchBarProps) {
   return (
     <View style={styles.container}>
       <TextInput
@@ -17,13 +22,13 @@ export default function SearchBar({ value, onChangeText, placeholder }: SearchBa
         placeholderTextColor="#94A3B8"
         autoCapitalize="none"
         autoCorrect={false}
-        clearButtonMode="while-editing"   // iOS only: shows × button
+        clearButtonMode="while-editing"
         returnKeyType="search"
       />
     </View>
   );
 }
- 
+
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
@@ -32,6 +37,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#E2E8F0",
   },
+
   input: {
     backgroundColor: "#F1F5F9",
     borderRadius: 10,

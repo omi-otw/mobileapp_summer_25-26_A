@@ -1,26 +1,23 @@
+// components/student-detail.tsx
 import { StyleSheet, Text, View } from "react-native";
 import { Student } from "../data/students";
- 
+
 interface StudentDetailProps {
   student: Student;
 }
- 
+
 export default function StudentDetail({ student }: StudentDetailProps) {
   return (
     <View style={styles.card}>
- 
-      {/* Header row: name + department */}
       <Text style={styles.name}>{student.name}</Text>
       <Text style={styles.department}>{student.department}</Text>
       <Text style={styles.idBadge}>ID: {student.studentId}</Text>
- 
+
       <View style={styles.divider} />
- 
-      {/* Bio */}
+
       <Text style={styles.sectionLabel}>About</Text>
       <Text style={styles.bio}>{student.bio}</Text>
- 
-      {/* Skills */}
+
       <Text style={styles.sectionLabel}>Skills</Text>
       <View style={styles.skillsRow}>
         {student.skills.map((skill, index) => (
@@ -29,11 +26,10 @@ export default function StudentDetail({ student }: StudentDetailProps) {
           </View>
         ))}
       </View>
- 
     </View>
   );
 }
- 
+
 const styles = StyleSheet.create({
   card: {
     margin: 12,
@@ -46,17 +42,20 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.06,
     shadowRadius: 6,
   },
+
   name: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#0D1F4E",
     marginBottom: 2,
   },
+
   department: {
     fontSize: 13,
     color: "#0D9488",
     marginBottom: 6,
   },
+
   idBadge: {
     fontSize: 11,
     color: "#0D9488",
@@ -68,11 +67,13 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     marginBottom: 14,
   },
+
   divider: {
     height: 1,
     backgroundColor: "#F1F5F9",
     marginBottom: 14,
   },
+
   sectionLabel: {
     fontSize: 11,
     fontWeight: "700",
@@ -81,17 +82,20 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     marginBottom: 6,
   },
+
   bio: {
     fontSize: 13,
     color: "#64748B",
     lineHeight: 20,
     marginBottom: 14,
   },
+
   skillsRow: {
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 8,
   },
+
   skillBadge: {
     backgroundColor: "#EFF6FF",
     borderRadius: 20,
@@ -100,6 +104,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#BFDBFE",
   },
+
   skillText: {
     fontSize: 12,
     color: "#1D4ED8",
